@@ -1,0 +1,49 @@
+{% extends 'layout.html.twig' %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+<div class="container r">
+        <div class="jubotron">
+                <div class="card card-signup">  
+                    <div class="content">
+                        {% for flashMessage in app.session.flashbag.get('success') %}
+                        <div class="alert alert-success">
+                            {{ flashMessage }}
+                        </div>
+                        {% endfor %}
+                        <div class="well">
+                         <h2 class="text-center">Modifier un commentaire</h2>
+                            {{ form_start(commentForm, { 'attr': {'class': 'form-horizontal'} }) }}
+                            <div class="form-group">
+                                 <div class="col-sm-4 control-label">
+                                    <h4>Auteur</h4>
+                                </div>
+                                <div class="col-sm-6">
+                                    {{ form_errors(commentForm.author) }} {{ form_widget(commentForm.author, { 'attr': { 'class': 'form-control', 'rows': '4' }}) }}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                  <div class="col-sm-4 control-label">
+                                    <h4>Contenu</h4>
+                                </div>
+                                <div class="col-sm-6">
+                                    {{ form_errors(commentForm.content) }} {{ form_widget(commentForm.content, { 'attr': { 'class': 'form-control', 'rows': '4' }}) }}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-4 col-sm-3">
+                                    <input type="submit" class="btn btn-info" value="Publier le commentaire " />
+                                </div>
+                            </div>
+                            {{ form_end(commentForm) }}
+                            <p style="text-align:center">
+                                <a href="{{ path('admin') }}">
+                             </a>
+                         </p>
+                   </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

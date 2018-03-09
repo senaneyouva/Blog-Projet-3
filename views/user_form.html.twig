@@ -1,0 +1,68 @@
+{% extends 'layout.html.twig' %}
+{% block title %}{{ title }}{% endblock %} 
+{% block content %}
+<div class="container espace r">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-signup">
+                    <div class="content">
+                       {% if form_errors(userForm.password.first) %}
+                        <div class="alert alert-danger">
+                            {{ form_errors(userForm.password.first) }}
+                        </div>
+                        {% endif %}
+                        <div class="well">
+                         <div class="header header-primary text-center">
+                        <h2> Ajouter ou modifier un utilisateur</h2>
+
+                    </div>
+                    <div class="cnetr"></div>
+                            {{ form_start(userForm, { 'attr': {'class': 'form-horizontal'} }) }}
+                            <div class="form-group">
+                                <div class="col-sm-4 control-label">
+                                    <b>Nom d'utilisateur</b>
+                                </div>
+                                <div class="col-sm-4">
+                                    {{ form_errors(userForm.username) }} {{ form_widget(userForm.username, { 'attr': { 'class': 'form-control' }}) }}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-4 control-label">
+                                    <b>   Mot de passe</b>
+                                </div>
+                                <div class="col-sm-4">
+                                    {{ form_widget(userForm.password.first, { 'attr': { 'class': 'form-control' }}) }}
+                                </div>
+                            </div>
+                            <div class="form-group pad">
+                                <div class="col-sm-4 control-label">
+                                    <b>  Répétition du mot de passe</b>
+                                </div>
+                                <div class="col-sm-4">
+                                    {{ form_widget(userForm.password.second, { 'attr': { 'class': 'form-control' }}) }}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-4 control-label">
+                                    <b>Rôle</b>
+                                </div>
+                                <div class="col-sm-2">
+                                    {{ form_errors(userForm.role) }} {{ form_widget(userForm.role, { 'attr': { 'class': 'form-control' }}) }}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-5 col-sm-3">
+                                    <input type="submit" class="btn btn-info" value="Enregistrer" />
+                                </div>
+                            </div>
+                            {{ form_end(userForm) }}
+                            <p style="text-align:center">    
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

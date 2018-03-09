@@ -1,0 +1,53 @@
+<nav>
+    <footer id="myFooter">
+            <div class="container">
+                <div class="row">
+                   <div class="col-sm-3 myCols">
+                        <h5>Administration </h5>
+                        <ul>
+                             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            <li>
+                                <a href="{{ path('logout') }}">Déconnexion</a>
+                            </li>
+                            {% if app.user and is_granted('ROLE_ADMIN') %}
+                            <li {% if adminMenu is defined %}active{% endif %}>
+                               
+                            {% endif %} {% else %}
+                            <li>
+                                <a href="{{ path('login') }}">Connexion</a>
+                            </li>                   
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <div class="col-sm-3 myCols">
+                        <h5>Navigation </h5>
+                        <balise>
+                            <nav>
+                            <ul>
+                                <li><a href="{{ path('home') }}">Accueil</a></li>
+                                <li><a href="{{ path('about')}}">Qui-suise je ?</a></li>
+                            </ul>
+                            </nav>
+                        </balise>
+                    </div>
+                     <div class="col-sm-3 myCols">
+                        <h5>Droit d'accés</h5>
+                            <balise>
+                                <ul>
+                                    <li><a href="{{path('droits')}}">Mentions legales </a></li> 
+                                </ul>
+                            </balise>
+                    </div>
+                    <div class="col-sm-3 myCols">
+                    <h5>Destination Alaska</h5>
+                        <ul>
+                            <li><a href="http://alaska.gov/"> Gouvernement </a></li> 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2017 Copyright by Youva Senane</p>
+            </div>
+    </footer>
+</nav>

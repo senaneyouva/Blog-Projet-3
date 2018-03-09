@@ -1,0 +1,180 @@
+{% extends "layout.html.twig" %} 
+{% block title %} {% endblock %} 
+{% block content %}
+<div class="container r2">
+    <div class="jumbotron row ">
+       <h2 class="text-center" ><span class="glyphicon glyphicon-list-alt"></span> Details de l'article</h2>
+    </div>
+</div>
+<div class="container ">
+<div class="jumbotron row ">
+<article>
+        {% for flashMessage in app.session.flashbag.get('success') %}
+            <div class="alert alert-success">
+                {{ flashMessage }}
+            </div>
+        {% endfor %}
+        <header class="text-center">
+                <h2 class="text-center"><strong>{{ article.title }}</strong></h2>
+                 <div>
+                     Le {{ article.date|date("d/m/Y")}} <span class="glyphicon glyphicon-time"> </span> {{ article.date|date("H:i:s")}}<br/> Publié par <a href="{{ path('about') }}">Jean-Forteroche</a>
+                </div>
+        </header>
+        <p> {{ article.content|raw|raw}}</p>
+</article>
+<hr/>
+                     
+<div style="padding-left:10px;">
+    <h3>Commentaires</h3> {% if comments == false %}
+    <p> Aucun commentaire<br></p>  
+</div>                    
+{% else %} {% for PublicationCommentOne in comments %} {% if PublicationCommentOne.familyParent == NULL %}
+<div>
+<p>
+<div class="panel">
+<div class="col-lg-2 col-xs-3 col-md-2 respon-comment"><img src="{{ asset('/assets/img/profil6.png') }}"></div>
+    <div class="element-actions"> </div>
+        <div class="element-content">  
+            <div class="content-post">
+                <div>  Publié par  {{ PublicationCommentOne.author}} | Le {{ PublicationCommentOne.date|date("d/m/Y \\à\\ H:i:s")  }}<br/>
+                    <p>{{PublicationCommentOne.content}} </p>
+                </div>
+            </div>
+            <a href="#repondre{{PublicationCommentOne.id}}" data-toggle="tab"><button class="btn btn-primary btn-xs">Répondre</button></a>
+            <a href="{{ path('comment_signal', { 'id': PublicationCommentOne.id } )  }}" ><button class="btn btn-danger btn-xs"> Signaler </button>
+            </a>
+            <div class="tab-content">
+                <div class="tab-pane" id="repondre{{PublicationCommentOne.id}}">
+                    <h4>Répondre</h4>
+                    <div class="row">
+                                <form method="post" action="comment/{{ article.id }}/comment">
+                                    <div class="col-lg-12"><input class="form-control" id="auteur" name="senane_auteur"  type="text" placeholder="Votre pseudo" 
+                                    required />
+                                    </div> 
+                            </div><br/>
+                            <div class="row">  
+                                    <div class="col-lg-12"><textarea class="form-control" id="txtCommentaire" name="senane_message" rows="4" cols="60" 
+                                    placeholder="Votre commentaire" required></textarea></div>
+                            </div><br/>  
+                            <div class="col-sm-12">
+                                 <input type="hidden" name="articleID" value="{{article.id}}">
+                            </div>
+                            <div class="col-sm-12">
+                                <input type="hidden" name="senane_parent_id" value="{{PublicationCommentOne.id}}">
+                             </div>
+                                <input type="submit" value="Commenter" class="btn btn-primary">
+                            </form>
+                        <div class="tab-pane active" id="home{{PublicationCommentOne.id}}"></div>
+                        </div>
+                    </div>
+             </article>
+        </div>
+    </p>
+</div>
+{% for PublicationCommentTwo in comments %} {% if PublicationCommentTwo.familyParent == PublicationCommentOne.id %}
+<div>
+    <div style="padding-left:85px;">
+        <p>
+            <div class="panel">
+                <div class="col-lg-2 col-xs-3 col-md-2 respon-comment"><img src="{{ asset('/assets/img/profil4.png') }}"></div>
+                    <div class="element-actions">
+                    </div>
+                        <div class="element-content">
+                            <div class="content-post">
+                                <div>  Publié par  {{ PublicationCommentTwo.author}} | 
+                                Le {{ PublicationCommentTwo.date|date("d/m/Y \\à\\ H:i:s") }}<br/>
+                                <p>{{PublicationCommentTwo.content}} </p>
+                                </div>
+                            </div>
+                                <a href="#repondre{{PublicationCommentTwo.id}}" data-toggle="tab"><button class="btn btn-primary btn-xs">Répondre</button></a>
+                                <a href="{{ path('comment_signal', { 'id': PublicationCommentTwo.id } )  }}" ><button class="btn btn-danger btn-xs"> Signaler </button></a>
+                            <div class="tab-content">
+                            <div class="tab-pane" id="repondre{{PublicationCommentTwo.id}}"><hr>
+                             <h4>Répondre</h4>
+                            <div class="row">
+                                <form method="post" action="comment/{{ article.id }}/comment">
+                                <div class="col-lg-12"><input class="form-control" id="auteur" name="senane_auteur"  type="text" placeholder="Votre pseudo" 
+                                required /></div> 
+                            </div><br/>
+                            <div class="row">  
+                                <div class="col-lg-12"><textarea class="form-control" id="txtCommentaire" name="senane_message" rows="4" cols="60" 
+                                placeholder="Votre commentaire" required></textarea></div>
+                            </div><br/> 
+                            <div class="col-sm-12">
+                                <input type="hidden" name="articleID" value="{{article.id}}">
+                            </div>
+                            <div class="col-sm-12">
+                                <input type="hidden" name="senane_parent_id" value="{{PublicationCommentTwo.id}}">
+                            </div>
+                            <input type="submit" value="Commenter" class="btn btn-primary">
+                            </form>
+                            <div class="tab-pane active" id="home{{PublicationCommentTwo.id}}">
+                            </div>
+                        </div>
+                        </div>
+                </article>
+            </div>
+        </p>
+    </div>  
+</div>   
+{% for PublicationCommentThree in comments %} {% if PublicationCommentThree.familyParent == PublicationCommentTwo.id %}
+<div>
+    <div style="padding-left:170px;">
+        <p>
+            <div class="panel">
+                <div class="col-lg-2 col-xs-3 col-md-2 respon-comment"><img src="{{ asset('/assets/img/profil9.png') }}"></div>
+                    <div class="element-actions"></div>
+                        <div class="element-content">
+                            <div class="content-post">
+                                <div>  Publié par  {{ PublicationCommentThree.author}} | Le {{ PublicationCommentThree.date|date("d/m/Y \\à\\ H:i:s")  }}<br/>
+                                    <p>{{PublicationCommentThree.content}} </p>
+                                </div>
+                            </div>
+                            <a href="{{ path('comment_signal', { 'id': PublicationCommentThree.id } )  }}" ><button class="btn btn-danger btn-xs"> Signaler </button></a>
+                        </div>
+                    </div>
+                </div>
+            <div class="">
+                    <div class="tab-content">
+                    <div class="tab-pane active" id="home{{PublicationCommentThree.id}}">
+                </div>
+            </div>
+        </div>
+    </div>
+</p>
+{% endif %} {% endfor %} {% endif %} {% endfor %}
+</div>
+{% endif %} {% endfor %} {% endif %} 
+                
+                                <span id="bottom"> </span>
+                                <br/><h3 class="col-lg-8">Ajouter un commentaire</h3> {{ form_start(commentForm)}}
+                                <div class="form-group col-lg-8">
+                                    {{ form_errors(commentForm.author)}} {{ form_widget(commentForm.author, { 'attr': { 'rows': '4', 'class': 'form-control', 'placeholder': 'Votre pseudo', }}) }}
+                                </div>
+                                <div class="form-group col-lg-8">
+                                    {{ form_errors(commentForm.content) }} {{ form_widget(commentForm.content, { 'attr': { 'rows': '4', 'class': 'form-control', 'placeholder': 'Votre Commentaire', }}) }}
+                                </div>
+                                {{ form_widget(commentForm.familyParent, { 'attr': { 'value' : NULL, } }) }}
+                                <div class="form-group col-lg-8">
+                                    <input type="submit" class="btn btn-primary" value="Commenter" />
+                                </div>
+                                {{ form_end(commentForm) }}
+                                </article>
+                       
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+             </p>
+        </div>
+    </div>
+</div>
+</p>
+</div>
+</div>
+</div>
+{% include "footer.html.twig" %}
+
+
+{% endblock %}
