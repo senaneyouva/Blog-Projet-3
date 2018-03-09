@@ -1,0 +1,762 @@
+.rond1{
+background-color: rgb(67, 196, 219);
+padding: 35px 35px 35px 35px;
+
+}
+
+.rond3{
+background-color: #ff992d;
+padding: 35px 35px 35px 35px;
+
+}
+.rond2{
+background-color:#28ff73;
+padding: 35px 35px 35px 35px;
+}
+.rond-text{
+color:white;
+font-size: 28px;
+padding: -10px;
+position: relative;
+}
+.profil-admin{
+width:200px;
+left: 40%
+
+}
+@media all and (max-width: 830px)
+{
+.im4{
+margin-left:  -70%;
+}
+}
+@media all and (max-width: 450px)
+{
+.im4{
+
+margin-left:  -80%;
+}
+}
+}
+.para {
+overflow: hidden;
+}
+
+.read-more {
+display: none;
+}
+
+.comment {
+overflow: hidden;
+padding: 0 0 1em;
+border-bottom: 1px solid #ddd;
+margin: 0 0 1em;
+*zoom: 0;
+}
+
+.comment-img {
+float: left;
+margin-right: 33px;
+border-radius: 5px;
+overflow: hidden;
+}
+
+.comment-img img {
+display: block;
+}
+
+.comment-body {
+overflow: hidden;
+}
+
+.comment .text {
+padding: 10px;
+border: 1px solid #e5e5e5;
+border-radius: 5px;
+background: #fff;
+}
+
+.comment .text p:last-child {
+margin: 0;
+}
+
+.comment .attribution {
+margin: 0.5em 0 0;
+font-size: 13px;
+
+}
+.commentaire1 {
+width: 580px;
+
+font: 13px/1.4 Arial, sans-serif;  }
+
+.commentaire {
+width: 500px;
+
+font: 14px/1.4 Arial, sans-serif;
+}
+
+
+}
+
+
+.met{
+background-color: red;
+}
+
+.ona{
+background-color: #3a3a3a;
+}
+aron{
+font-size: 28px;
+}
+
+.mani{
+color: white;
+}
+.nova{
+
+}
+#myFooter{
+margin-top:  0%;
+
+}
+.pad{
+padding:  -120px;
+}
+.center{
+padding-top:    120px;
+}
+
+.btn-default, .btn-default:hover, .btn-default:active, .btn-default:visited {
+background-color: #3a3a3a !important;
+color: white;
+}
+
+
+.btn-info, .btn-info:hover, .btn-info:active, .btn-info:visited {
+background-color: #3a3a3a !important;
+}
+
+.btn-info, .btn-info:hover, .btn-info:active, .btn-info:visited {
+background-color: #3a3a3a !important;
+}
+.yoi{
+text-align: center;
+font-size:   28px;
+zoom:100%;
+}
+
+.profil-admin{
+margin-left: 39%;
+margin-right:  30%;
+}
+
+
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+
+/*The form part*/
+.bloki1 {
+/*A box that the form resides in - centered vertically and horizontally based on the window. The max-width and % width combo allow it to resize for small devices*/  
+background: #FFF;
+border-radius: 8px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+display: block;
+left: 50%;
+max-width: 360px;
+position: absolute;
+top: 50%;
+-ms-transform: translate(-50%, -50%);
+-webkit-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+width: 90%;
+z-index: 2;
+}
+
+.format {
+display: block;
+margin: auto;
+padding: 27px 0;
+width: 85%;
+}
+
+/*Text-inputs*/
+.mat-in {
+position: relative;
+margin-bottom: 32px;
+}
+
+.put {
+border: none;
+border-bottom: 1px solid #9E9E9E;
+display: block;
+font-size: 16px;
+padding: 8px 0px;
+-webkit-transition: 0.2s border-bottom;
+transition: 0.2s border-bottom;
+width: 100%;
+}
+
+.put:focus, .input:invalid {
+box-shadow: none;
+outline: none;
+}
+
+.input:focus {
+border-bottom: 1px solid #2196f3;
+}
+
+/*Labels*/
+label {
+color: #9E9E9E;
+font-size: 16px;
+pointer-events: none;
+position: absolute;
+top: 10px;
+-webkit-transition: 0.2s ease all;
+transition: 0.2s ease all;
+}
+
+.put:focus ~ label, .put:valid ~ label {
+color: #2196f3;
+font-size: 12px;
+top: -16px;
+}
+
+/*Bar that appears when an input is selected*/
+.bar:before, .bar:after {
+background: #2196f3;
+bottom: 1px;
+content: '';
+height: 2px;
+position: absolute;
+-webkit-transition: 0.2s ease all;
+transition: 0.2s ease all;
+width: 0;
+}
+
+.bar:before {
+left: 50%;
+}
+
+.bar:after {
+right: 50%;
+}
+
+.put:focus ~ .bar:before, .put:focus ~ .bar:after {
+width: 50%;
+}
+
+/*Submit Button*/
+#login {
+background: #2196f3;
+border: none;
+border-radius: 2px;
+color: #FFF;
+cursor: pointer;
+font-size: 16px;
+opacity: 0.999;
+padding: 8px 0;
+position: relative;
+-webkit-transition: 0.2s ease background;
+transition: .2s ease background;
+width: 100%;
+}
+
+#login:hover {
+background: #1976d2;
+}
+
+#login:before, #login:after {
+border-radius: 2px;
+content: '';
+height: 0;
+left: 0;
+opacity: 0;
+position: absolute;
+width: 100%;
+-webkit-transition: 0.2s ease all;
+transition: .2s ease all;
+z-index: -1;
+}
+
+#login:before {
+top: 50%;
+}
+
+#login:after {
+bottom: 50%;
+}
+
+#login:active:before, #login:active:after {
+background: #0d47a1;
+height: 50%;
+opacity: 1;
+}
+
+/*Error Messages*/
+.error {
+color: #F44336;
+margin: 16px auto 0;
+text-align: center;
+width: 90%;
+}
+
+/*The Background Part - Each svg element will act as a column that rises. Within each svg column will be a rect element that rotates. Due to an error FF regarding the transform-origin of objects in an svg, the transform-orgin must be explicitly given without percents*/
+
+.bg-boxes{
+/*Set the container for the svg elements to take up the whole window and hide objects outside of the window*/
+height: 100%;
+min-height: 240px;
+position: absolute;
+overflow: hidden;
+width: 100%;
+z-index: 1;
+}
+
+svg{
+/*Set defaults for svg columns. Opacity set to 0 so the elements are invisible before the animation begins and will not show up on browsers without animation*/
+-webkit-animation: riser 20s infinite;
+animation: riser 20s infinite;
+opacity: 0;
+overflow: visible;
+position: absolute;
+}
+
+.bubble{
+/*Set the defaults for the "bubbles". transform-origin should always be the center-point of the object including blank-space within the svg. Since the object should be centered, this is equal to the width of the object. The default bubble is 100px by 100px in an svg object with a width of 200px*/
+-webkit-animation: rotator 20s linear infinite;
+animation: rotator 20s linear infinite;
+fill: #FFF;
+-webkit-transform-origin: 100px 100px;
+transform-origin: 100px 100px;
+}
+#col1{
+/*Since this element is larger than the set default, I want it to rise a little faster to give a subtle sense of depth*/
+-webkit-animation-duration: 15s;
+animation-duration: 15s;
+}
+#bub1{
+/*The transform-origin has to be redefined because this bubble is not the set default size*/
+-webkit-transform-origin: 150px 150px;
+transform-origin: 150px 150px;
+}
+
+#col2{
+/*To offset the columns, adjust their left attribute and add an animation-delay*/
+left: 15%;
+-webkit-animation-delay: 18s;
+animation-delay: 18s;
+}
+
+#col3{
+left: 30%;
+-webkit-animation-delay: 14s;
+animation-delay: 14s;
+-webkit-animation-duration: 17s;
+animation-duration: 17s;
+}
+
+#bub3{
+-webkit-animation-delay: 14s;
+animation-delay: 14s;
+-webkit-transform-origin: 130px 130px;
+transform-origin: 130px 130px;
+}
+
+#col4{
+left: 45%;
+-webkit-animation-delay: 8s;
+animation-delay: 8s;
+-webkit-animation-duration: 22s;
+animation-duration: 22s;
+}
+
+#bub4{
+-webkit-animation-delay: 8s;
+animation-delay: 8s;
+-webkit-transform-origin: 80px 80px;
+transform-origin: 80px 80px;
+}
+
+#col5{
+left: 60%;
+-webkit-animation-delay: 15s;
+animation-delay: 15s;
+-webkit-animation-duration: 18s;
+animation-duration: 18s;
+}
+
+#bub5{
+-webkit-animation-delay: 15s;
+animation-delay: 15s;
+-webkit-transform-origin: 120px 120px;
+transform-origin: 120px 120px;
+}
+
+#col6{
+left: 75%;
+-webkit-animation-delay: 19s;
+animation-delay: 19s;
+}
+
+#col7{
+left: 90%;
+-webkit-animation-delay: 4s;
+animation-delay: 4s;
+}
+
+#col8{
+left: -5%;
+-webkit-animation-delay: 11s;
+animation-delay: 11s;
+}
+
+#col9{
+left: 25%;
+-webkit-animation-delay: 5s;
+animation-delay: 5s;
+}
+
+#col10{
+left: 50%;
+-webkit-animation-delay: 12s;
+animation-delay: 12s;
+}
+
+#col11{
+left: 67%;
+-webkit-animation-delay: 1s;
+animation-delay: 1s;
+-webkit-animation-duration: 25s;
+animation-duration: 25s;
+}
+
+#bub11{
+-webkit-animation-delay: 1s;
+animation-delay: 1s;
+-webkit-transform-origin: 50px 50px;
+transform-origin: 50px 50px;
+}
+
+/*Rotation Animation - Should be set to a factor of 360 to prevent jumpiness*/ 
+@-webkit-keyframes rotator{
+to{
+-webkit-transform: rotate(360deg);
+transform: rotate(360deg);
+}
+}
+
+@keyframes rotator{
+to{
+-webkit-transform: rotate(360deg);
+transform: rotate(360deg);
+}
+}
+
+@-webkit-keyframes riser{
+0%{
+opacity: 0.2;
+-webkit-transform: translateY(100%);
+transform: translateY(100%);
+}
+100%{
+opacity: 0.2;
+-webkit-transform: translateY(-250px);
+transform: translateY(-250px);
+}
+}
+
+@keyframes riser{
+0%{
+opacity: 0.2;
+-webkit-transform: translateY(100%);
+transform: translateY(100%);
+}
+100%{
+opacity: 0.2;
+-webkit-transform: translateY(-250px);
+transform: translateY(-250px);
+}
+}
+
+.r3{
+padding-top: 70px;
+}
+
+
+.red{
+background-color: #f99393;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Reset */
+@import url(//codepen.io/chrisdothtml/pen/ojLzJK.css);
+
+// Variables
+$blue: #34495e;
+$red: #e74c3c;
+
+/* Extenders */
+
+.clearfix:after {
+content: '';
+display: table;
+clear: both;
+}
+
+
+
+/* General */
+
+.panel {
+max-width: 450px;
+margin: 0 auto;
+margin-left: 12px;
+padding: 30px 20px;
+
+.panel-element {
+position: relative;
+
+.element-content {
+background-color: #fff;
+padding: 15px;
+border-bottom: 1px solid #d6d6d6;
+position: relative;
+right: 0;
+z-index: 2;
+@extend .animate;
+
+.btn-more {
+width: 30px;
+height: 30px;
+line-height: 30px;
+opacity: 0;
+position: absolute;
+top: 0;
+right: 0;
+@extend .animate;
+
+> i {
+font-size: 16px;
+color: #929292;
+vertical-align: middle;
+}
+
+.icon-open,
+.icon-hearted {
+display: none;
+}
+
+&:hover {
+background-color: #F9F9F9;
+}
+}
+
+.content-post {
+@extend .clearfix;
+
+.post-avatar {
+background-color: #ededed;
+width: 60px;
+height: 60px;
+float: left;
+border-radius: 50%;
+}
+
+.post-content {
+margin-left: 75px;
+padding-top: 9px;
+
+.post-title,
+.post-body {
+display: block;
+}
+
+.post-title {
+font-size: 14px;
+color: #AFADAD;
+}
+
+.post-body {
+margin-top: 5px;
+font-size: 12px;
+color: #CCCBCB;
+}
+}
+}
+
+&:hover {
+
+.btn-more {
+opacity: 1;
+}
+}
+}
+
+.element-actions {
+width: 100px;
+height: 45px;
+font-size: 0;
+position: absolute;
+top: 50%;
+right: 20px;
+z-index: 1;
+transform: translateY(-50%);
+@extend .clearfix;
+
+.btn-action {
+display: inline-block;
+width: 45px;
+height: 45px;
+border-width: 2px;
+border-style: solid;
+border-radius: 50%;
+@extend .animate;
+
+> i {
+font-size: 20px;
+@extend .animate;
+}
+
+&.btn-hide {
+border-color: $blue;
+
+> i {
+color: $blue;
+}
+
+&:hover {
+background-color: $blue;
+}
+}
+
+&.btn-heart {
+border-color: $red;
+
+> i {
+color: $red;
+}
+
+&:hover {
+background-color: $red;
+}
+}
+
+&:not(:last-child) {
+margin-right: 10px;
+}
+
+&:hover {
+
+> i {
+color: #fff;
+}
+}
+}
+}
+
+&:not(:first-child) {
+margin-top: 15px;
+}
+
+&.panel-element-open {
+
+.element-content {
+right: 140px;
+
+.btn-more {
+opacity: 1;
+
+.icon-closed {
+display: none;
+}
+
+.icon-open {
+display: inline-block;
+}
+}
+}
+}
+
+&.panel-element-hearted {
+
+.element-actions {
+
+.btn-action.btn-heart {
+background-color: $red;
+
+> i {
+color: #fff;
+}
+}
+}
+
+.element-content {
+
+.btn-more {
+opacity: 1;
+
+> i {
+color: $red;
+}
+
+.icon-open,
+.icon-closed {
+display: none;
+}
+
+.icon-hearted {
+display: inline-block;
+}
+}
+}
+}
+}
+}
+
+@media screen and (max-width: 500px) {
+
+h1 {
+margin-bottom: 0;
+padding: 40px;
+font-size: 25px;
+}
+
+.panel {
+
+.panel-element {
+
+.element-content {
+
+.btn-more {
+opacity: 1;
+
+&:hover {
+background-color: transparent;
+}
+}
+}
+}
+}
+}
